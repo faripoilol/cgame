@@ -10,7 +10,7 @@ int APIENTRY wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, int) {
     const wchar_t* cls = L"CGameWnd";
     WNDCLASSEX wc{ sizeof(WNDCLASSEX) };
     wc.lpfnWndProc = WndProc;
-    wc.hInstance = hInst;
+    wc.hInstance = hInst; 
     wc.hCursor = LoadCursor(nullptr, IDC_ARROW);
     wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
     wc.lpszClassName = cls;
