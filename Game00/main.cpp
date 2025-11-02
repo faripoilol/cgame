@@ -142,15 +142,14 @@ int APIENTRY wWinMain(
                     g.SetInterpolationMode(Gdiplus::InterpolationModeNearestNeighbor);
                     g.SetPixelOffsetMode(Gdiplus::PixelOffsetModeHalf);
 
-                    const float pivotX = 400.0f;
-                    const float pivotY = 600.0f;
+                    const float pivotX = (rc.right + rc.left) / 2;
+                    const float pivotY = rc.bottom - 37.0f;
                     const float barrelW = 240.0f;
                     const float barrelH = 160.0f;
 
                     g.TranslateTransform(pivotX, pivotY);
                     g.RotateTransform(-phi * 180.0f / 3.14159265f + 90);
                     g.DrawImage(&tankBarrel, Gdiplus::RectF(-barrelW * 0.5f, -barrelH, barrelW, barrelH));
-
                     g.ResetTransform();
                 }
 
