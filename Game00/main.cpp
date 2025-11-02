@@ -151,6 +151,9 @@ int APIENTRY wWinMain(
                     g.RotateTransform(-phi * 180.0f / 3.14159265f + 90);
                     g.DrawImage(&tankBarrel, Gdiplus::RectF(-barrelW * 0.5f, -barrelH, barrelW, barrelH));
                     g.ResetTransform();
+
+                    Gdiplus::SolidBrush brush(Gdiplus::Color(255, 255, 255, 255));
+                    g.FillEllipse(&brush, int(rc.right / 2 + 70 * cos(phi)  - 5), int(rc.bottom - 37 - 70 * sin(phi) - 5), 10, 10);
                 }
 
                 {
